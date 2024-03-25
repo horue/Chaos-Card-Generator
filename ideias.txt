@@ -1,0 +1,38 @@
+import photoshop
+
+def alterar_gradiente_por_predefinido(arquivo, gradiente_predefinido):
+    # Abrir o arquivo PSD
+    doc = photoshop.app.open(arquivo)
+
+    # Selecionar a camada com gradiente
+    layer = doc.layers['CamadaComGradiente']
+    layer.select()
+
+    # Obter o gradiente predefinido
+    gradient_predefinido = doc.gradients[gradiente_predefinido]
+
+    # Aplicar o gradiente predefinido à camada
+    layer.applyGradientFill(gradient_predefinido)
+
+    # Salvar o arquivo PSD
+    doc.save()
+
+# Alterar o gradiente por um predefinido de um arquivo PSD de exemplo
+alterar_gradiente_por_predefinido('caminho/para/arquivo.psd', 'GradientePredefinido')
+
+
+def alterar_texto(arquivo, texto):
+    # Abrir o arquivo PSD
+    doc = photoshop.app.open(arquivo)
+
+    # Selecionar a camada de texto
+    layer = doc.layers['CamadaTexto'] #aqui tá o efeito velho
+    layer.select()
+
+    # Alterar o texto da camada
+    layer.setText(novoefeito)
+
+    # Salvar o arquivo PSD
+    doc.save()
+
+novoefeito=input("Qual será o novo efeito?")
