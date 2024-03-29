@@ -30,6 +30,44 @@ def guistart():
     label = tkinter.Label(root, text="")
     label.pack()
 
+    #Escolha o custo da mana da carta
+    label = tkinter.Label(root, text="Custo de Mana:")
+    label.pack()
+
+    textoEntrada = tkinter.StringVar()
+    e1 = tkinter.Entry(root)
+    e1.bind('<Key>', lambda x:textoEntrada.set(e1.get()+x.char))
+    e1.pack()
+
+    label = tkinter.Label(root, text="")
+    label.pack()
+
+    #Entre as informações da carta
+
+    label = tkinter.Label(root, text="Informações da carta:")
+    label.pack()
+
+    textoEntrada = tkinter.StringVar()
+    e1 = tkinter.Entry(root)
+    e1.bind('<Key>', lambda x:textoEntrada.set(e1.get()+x.char))
+    e1.pack()
+
+    label = tkinter.Label(root, text="")
+    label.pack()
+
+    #Escolha o efeito
+
+    label = tkinter.Label(root, text="Efeito:")
+    label.pack()
+
+    textoEntrada = tkinter.StringVar()
+    e1 = tkinter.Entry(root)
+    e1.bind('<Key>', lambda x:textoEntrada.set(e1.get()+x.char))
+    e1.pack()
+
+    label = tkinter.Label(root, text="")
+    label.pack()
+
     #Escolha o elemento da carta
 
     label = tkinter.Label(root, text="Tipo da Criatura:")
