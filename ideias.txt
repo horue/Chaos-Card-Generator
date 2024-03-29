@@ -35,4 +35,4 @@ def alterar_texto(arquivo, texto):
     # Salvar o arquivo PSD
     doc.save()
 
-novoefeito=input("Qual será o novo efeito?")
+novoefeito=input("Qual será o novo efeito?") (Not necessary anymore, will be done using the UI)

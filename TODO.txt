@@ -1,2 +1,7 @@
-Make a protoype GUI
-Make defs 
+Make a protoype GUI (Started)
+Make defs at cardgenerator.py
+Make a GUI TODO file
+Make new photoshop clean files
+Add AI image generation to make the process faster
+Add a way to cut the image
+Add a preview on how the card is going
