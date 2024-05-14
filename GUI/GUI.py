@@ -1,6 +1,8 @@
 import customtkinter as ct
 
 def initial(root):
+    l1 = ct.CTkLabel(root, text='Chaos Card Generator - Main Screen')
+    l1.pack()
     print(1)
 
 
