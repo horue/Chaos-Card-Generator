@@ -28,6 +28,8 @@ def main_screen():
     root = ct.CTk()
     root.geometry("400x500")
     root.title("Chaos Card Generator")
+    root.rowconfigure(index=3)
+    root.columnconfigure(index=5)
 
     
     initial(root)
