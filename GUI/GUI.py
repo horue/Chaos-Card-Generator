@@ -1,19 +1,18 @@
 import customtkinter as ct
 
 def initial(root):
-    f0=ct.CTkScrollableFrame(root, width=400, height=300)
-    f0.grid(column=0, row=1, padx=30)
+    
+    l1 = ct.CTkLabel(root, text='Chaos Card Generator - Main Screen')
+    l1.grid(column=3, row=1)
+
+    f0=ct.CTkFrame(root, width=10, height=20)
+    f0.grid(column=0, row=0, padx=0, sticky='ew', columnspan=15)
 
     f1=ct.CTkScrollableFrame(root, width=400, height=300)
     f1.grid(column=0, row=1, padx=30)
     
     f2=ct.CTkScrollableFrame(root, width=400, height=300)
     f2.grid(column=0, row=2, padx=30, pady=30)
-
-
-    l1 = ct.CTkLabel(root, text='Chaos Card Generator - Main Screen')
-    l1.grid(column=3, row=0)
-
 
     l1a = ct.CTkLabel(f1, text="Card Name")
     l1a.pack()
@@ -36,7 +35,8 @@ def main_screen():
     root.geometry("400x500")
     root.title("Chaos Card Generator")
     root.rowconfigure(index=3)
-    root.columnconfigure(index=5)
+    root.columnconfigure((0, 1, 2, 3, 4), weight=1)
+
 
     
     initial(root)
