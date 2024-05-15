@@ -1,16 +1,10 @@
 import customtkinter as ct
+from CTkMenuBar import *
+from toolbar import *
 
-def p():
-    print(1)
 
 def initial(root):
-
-    f0=ct.CTkFrame(root, width=10, height=20)
-    f0.grid(column=0, row=0, padx=0, pady=(0,30), sticky='ew', columnspan=5)
-
-    o1 = ct.CTkOptionMenu(f0, default_text='File',values=['Export', "Save", "Open"], command=lambda:print(1))
-    o1.grid(row=0, column=0, pady=10, padx=10)
-
+    bar(root)
 
     f1=ct.CTkScrollableFrame(root, width=400, height=300)
     f1.grid(column=0, row=1, padx=10)
