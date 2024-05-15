@@ -1,7 +1,14 @@
 import customtkinter as ct
+from  CustomTkinterMessagebox  import  *
+from customtkinter import filedialog    
+
 
 def get_command(value):
     print("segmented button clicked:", value)
+    if value == 'Save':
+        CTkMessagebox.messagebox(title='Saving test', text='Save')
+    if value == 'Open':
+        filedialog.askopenfilename()
     o1.set("")
 
 
