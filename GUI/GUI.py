@@ -1,12 +1,16 @@
 import customtkinter as ct
 
+def p():
+    print(1)
+
 def initial(root):
-    
-    l1 = ct.CTkLabel(root, text='Chaos Card Generator - Main Screen')
-    l1.grid(column=3, row=1)
 
     f0=ct.CTkFrame(root, width=10, height=20)
     f0.grid(column=0, row=0, padx=0, pady=(0,30), sticky='ew', columnspan=5)
+
+    o1 = ct.CTkOptionMenu(f0, values=['Export', "Save", "Open"], command=lambda:p())
+    o1.grid(row=0, column=0, pady=10, padx=10)
+
 
     f1=ct.CTkScrollableFrame(root, width=400, height=300)
     f1.grid(column=0, row=1, padx=10)
