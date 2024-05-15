@@ -6,10 +6,10 @@ def initial(root):
     l1.grid(column=3, row=1)
 
     f0=ct.CTkFrame(root, width=10, height=20)
-    f0.grid(column=0, row=0, padx=0, sticky='ew', columnspan=15)
+    f0.grid(column=0, row=0, padx=0, pady=(0,30), sticky='ew', columnspan=5)
 
     f1=ct.CTkScrollableFrame(root, width=400, height=300)
-    f1.grid(column=0, row=1, padx=30)
+    f1.grid(column=0, row=1, padx=10)
     
     f2=ct.CTkScrollableFrame(root, width=400, height=300)
     f2.grid(column=0, row=2, padx=30, pady=30)
