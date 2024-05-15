@@ -14,8 +14,15 @@ def initial(root):
     l1 = ct.CTkLabel(root, text='Chaos Card Generator - Main Screen')
     l1.grid(column=3, row=0)
 
-    e1 = ct.CTkEntry(f1, placeholder_text='Card Name', width=200, border_color='Gray')
-    e1.pack(padx=10, pady=20)
+
+    l1a = ct.CTkLabel(f1, text="Card Name")
+    l1a.pack()
+
+    e1 = ct.CTkEntry(f1, width=200, border_color='Gray')
+    e1.pack(padx=10)
+
+    l2a = ct.CTkLabel(f1, text='Card Effect')
+    l2a.pack()
 
     e2 = ct.CTkTextbox(f1, height=200, width=200, border_color='Gray', border_width=2)
     e2.pack(padx=100)
