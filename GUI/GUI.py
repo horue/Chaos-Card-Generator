@@ -8,7 +8,7 @@ def initial(root):
     f0=ct.CTkFrame(root, width=10, height=20)
     f0.grid(column=0, row=0, padx=0, pady=(0,30), sticky='ew', columnspan=5)
 
-    o1 = ct.CTkOptionMenu(f0, values=['Export', "Save", "Open"], command=lambda:print(1))
+    o1 = ct.CTkOptionMenu(f0, default_text='File',values=['Export', "Save", "Open"], command=lambda:print(1))
     o1.grid(row=0, column=0, pady=10, padx=10)
 
 
