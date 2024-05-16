@@ -24,18 +24,7 @@ def bar1(fm):
     o1.delete(selected_value)
     o1.grid(row=2, column=0, pady=10, padx=10)
 
-def initial(root):
-    fh=ct.CTkFrame(root)
-    fh.pack(fill='x', anchor='n')
-
-    fm=ct.CTkFrame(root, height=20, fg_color='#ffffff')
-    fm.pack(fill='both', expand=True, anchor='s')
-    
-    bar1(fh)
-
-    f1=ct.CTkScrollableFrame(fm, width=400, height=650)
-    f1.grid(column=0, row=1, padx=30, pady=(30,0))
-    
+def frame1(f1):
     l1a = ct.CTkLabel(f1, text="Card Name")
     l1a.pack()
 
@@ -47,6 +36,22 @@ def initial(root):
 
     e2 = ct.CTkTextbox(f1, height=200, width=200, border_color='Gray', border_width=2)
     e2.pack(padx=100)
+
+def initial(root):
+    fh=ct.CTkFrame(root)
+    fh.pack(fill='x', anchor='n')
+
+    fm=ct.CTkFrame(root, height=20, fg_color='#ffffff')
+    fm.pack(fill='both', expand=True, anchor='s')
+    
+    bar1(fh)
+
+    f1=ct.CTkScrollableFrame(fm, width=400, height=650)
+    f1.grid(column=0, row=1, padx=30, pady=(30,0))
+
+    frame1(f1)
+    
+
 
 
     print(1)
