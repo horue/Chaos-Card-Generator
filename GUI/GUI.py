@@ -1,7 +1,9 @@
 import customtkinter as ct
 from CTkMenuBar import *
 from  CustomTkinterMessagebox  import  *
-from customtkinter import filedialog    
+from customtkinter import filedialog
+from CTkSpinbox import *
+
 
 
 
@@ -43,6 +45,20 @@ def frame1(f1):
     e3 = ct.CTkTextbox(f1, height=200, width=700, border_color='Gray', border_width=2)
     e3.pack(padx=100)
 
+    l4a = ct.CTkLabel(f1, text='Mana Cost')
+    l4a.pack()
+
+    spin_var = ct.IntVar()
+    s1 = CTkSpinbox(f1,
+          start_value = 1,
+          min_value = 1,
+          max_value = 20,
+          scroll_value = 2,
+          variable = spin_var)
+    s1.pack()
+
+
+
 def initial(root):
     fh=ct.CTkFrame(root)
     fh.pack(fill='x', anchor='n')
@@ -52,7 +68,7 @@ def initial(root):
     
     bar1(fh)
 
-    f1=ct.CTkScrollableFrame(fm, width=400, height=650, label_text='Card Configuration')
+    f1=ct.CTkScrollableFrame(fm, width=400, height=620, label_text='Card Configuration')
     f1.grid(column=0, row=1, padx=30, pady=(30,0))
 
     frame1(f1)
