@@ -31,11 +31,17 @@ def frame1(f1):
     e1 = ct.CTkEntry(f1, width=200, border_color='Gray')
     e1.pack(padx=10)
 
-    l2a = ct.CTkLabel(f1, text='Card Effect')
+    l2a = ct.CTkLabel(f1, text="Card Info")
     l2a.pack()
 
-    e2 = ct.CTkTextbox(f1, height=200, width=200, border_color='Gray', border_width=2)
-    e2.pack(padx=100)
+    e2 = ct.CTkEntry(f1, width=200, border_color='Gray')
+    e2.pack(padx=10)
+
+    l3a = ct.CTkLabel(f1, text='Card Effect')
+    l3a.pack()
+
+    e3 = ct.CTkTextbox(f1, height=200, width=700, border_color='Gray', border_width=2)
+    e3.pack(padx=100)
 
 def initial(root):
     fh=ct.CTkFrame(root)
@@ -46,15 +52,10 @@ def initial(root):
     
     bar1(fh)
 
-    f1=ct.CTkScrollableFrame(fm, width=400, height=650)
+    f1=ct.CTkScrollableFrame(fm, width=400, height=650, label_text='Card Configuration')
     f1.grid(column=0, row=1, padx=30, pady=(30,0))
 
     frame1(f1)
-    
-
-
-
-    print(1)
 
 
 def main_screen():
@@ -63,8 +64,6 @@ def main_screen():
     root.title("Chaos Card Generator")
     root.rowconfigure(index=3)
     root.columnconfigure((0, 1, 2), weight=0)
-
-
     
     initial(root)
     
