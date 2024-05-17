@@ -77,7 +77,7 @@ def frame1(f1):
     s2 = ct.IntVar()
     s2 = CTkSpinbox(f1,
           start_value = 1,
-          min_value = 1,
+          min_value = 0,
           max_value = 16,
           scroll_value = 2,
           variable = s2)
