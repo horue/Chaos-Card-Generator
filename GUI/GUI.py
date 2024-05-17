@@ -10,9 +10,12 @@ from CTkSpinbox import *
 def get_command(value):
     print("segmented button clicked:", value)
     if value == 'Save':
-        CTkMessagebox.messagebox(title='Saving test', text='Save')
+        CTkMessagebox.messagebox(title='Warning test', text='Save')
     if value == 'Open':
         filedialog.askopenfilename()
+    if value == 'Export':
+        CTkMessagebox.messagebox(title='Warning', text='Card exported.')
+
     o1.set("")
 
 def bar1(fm):
@@ -27,6 +30,9 @@ def bar1(fm):
     o1.grid(row=2, column=0, pady=10, padx=10)
 
 def frame1(f1):
+    o1 = ct.CTkOptionMenu(f1, values=['Creature', 'Witchcraft'])
+    o1.pack()
+
     l1a = ct.CTkLabel(f1, text="Card Name")
     l1a.pack()
 
@@ -68,6 +74,13 @@ def frame1(f1):
           scroll_value = 2,
           variable = s2)
     s2.pack()
+
+
+    l6a = ct.CTkLabel(f1, text='Card ID/Date')
+    l6a.pack()
+
+    e4 = ct.CTkTextbox(f1, height=50, width=700, border_color='Gray', border_width=2)
+    e4.pack(padx=100)
 
 
 
