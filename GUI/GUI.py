@@ -48,14 +48,26 @@ def frame1(f1):
     l4a = ct.CTkLabel(f1, text='Mana Cost')
     l4a.pack()
 
-    spin_var = ct.IntVar()
+    s1 = ct.IntVar()
     s1 = CTkSpinbox(f1,
           start_value = 1,
           min_value = 1,
-          max_value = 20,
+          max_value = 11,
           scroll_value = 2,
-          variable = spin_var)
+          variable = s1)
     s1.pack()
+
+    l5a = ct.CTkLabel(f1, text='Card Power')
+    l5a.pack()
+
+    s2 = ct.IntVar()
+    s2 = CTkSpinbox(f1,
+          start_value = 1,
+          min_value = 1,
+          max_value = 16,
+          scroll_value = 2,
+          variable = s2)
+    s2.pack()
 
 
 
