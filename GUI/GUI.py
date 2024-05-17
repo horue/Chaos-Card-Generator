@@ -4,6 +4,8 @@ from  CustomTkinterMessagebox  import  *
 from customtkinter import filedialog
 from CTkSpinbox import *
 
+elements = ['Fire', 'Water', 'Grass', 'Rock', 'Wind', 'Light', 'Dark']
+
 
 
 
@@ -50,6 +52,12 @@ def frame1(f1):
 
     e3 = ct.CTkTextbox(f1, height=200, width=700, border_color='Gray', border_width=2)
     e3.pack(padx=100)
+
+    l4 = ct.CTkLabel(f1, text='Card Element')
+    l4.pack()
+
+    o2 = ct.CTkOptionMenu(f1, values=elements)
+    o2.pack()
 
     l4a = ct.CTkLabel(f1, text='Mana Cost')
     l4a.pack()
