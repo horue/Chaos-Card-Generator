@@ -21,9 +21,13 @@ def change_effect():
     group = docRef.LayerSets[group1_name]
 
     new_effect = input('Qual o novo efeito da carta? ')
-    card_name = group.ArtLayers['effect']
-    card_name.TextItem.Contents = new_effect
+    if new_effect == '':
+        pass
+    else:
+        card_name = group.ArtLayers['effect']
+        card_name.TextItem.Contents = new_effect
 
+change_name()
 change_effect()
 
 
