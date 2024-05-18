@@ -30,8 +30,21 @@ def change_effect():
         card_name = group.ArtLayers['effect']
         card_name.TextItem.Contents = new_effect
 
+def change_mana():
+    group_name = 'Criatura'
+    group = docRef.LayerSets[group_name]
+
+    new_mana = input('Qual o novo custo de mana? ')
+    if new_mana == '':
+        pass
+    else:
+        card_config = group.ArtLayers['mana']
+        card_config.TextItem.Contents = new_mana
+
+
 change_name()
 change_effect()
+change_mana()
 
 
 
