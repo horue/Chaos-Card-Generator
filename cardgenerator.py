@@ -7,9 +7,9 @@ docRef = ps.Open(file_path)
 
 
 def change_name(): 
-    group1_name = 'Criatura'
+    group_name = 'Criatura'
 
-    group = docRef.LayerSets[group1_name]
+    group = docRef.LayerSets[group_name]
 
     new_name = input('Qual o novo nome da carta? ')
     if new_name == '':
@@ -19,9 +19,9 @@ def change_name():
         card_name.TextItem.Contents = new_name
 
 def change_effect():
-    group1_name = 'Criatura'
+    group_name = 'Criatura'
 
-    group = docRef.LayerSets[group1_name]
+    group = docRef.LayerSets[group_name]
 
     new_effect = input('Qual o novo efeito da carta? ')
     if new_effect == '':
@@ -41,10 +41,23 @@ def change_mana():
         card_config = group.ArtLayers['mana']
         card_config.TextItem.Contents = new_mana
 
+def change_power():
+    group_name = 'Criatura'
+    group = docRef.LayerSets[group_name]
+
+    new_power = input('Qual a nova força? ')
+    if new_power == '':
+        pass
+    else:
+        card_config = group.ArtLayers['atk']
+        card_config.TextItem.Contents = new_power
+
+
 
 change_name()
 change_effect()
 change_mana()
+change_power()
 
 
 
