@@ -1,4 +1,5 @@
 from win32com.client import Dispatch
+import PIL
 
 ps = Dispatch(r"Photoshop.Application")
 file_path = r'C:\Users\jorge\Projetos\Chaos-Card-Generator\PS_templates\ps_template.psd'
