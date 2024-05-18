@@ -38,8 +38,8 @@ def frame1(f1):
     l1a = ct.CTkLabel(f1, text="Card Name")
     l1a.pack()
 
-    e1 = ct.CTkEntry(f1, width=200, border_color='Gray')
-    e1.pack(padx=10)
+    name = ct.CTkEntry(f1, width=200, border_color='Gray')
+    name.pack(padx=10)
 
     l2a = ct.CTkLabel(f1, text="Card Info")
     l2a.pack()
@@ -67,7 +67,7 @@ def frame1(f1):
           start_value = 1,
           min_value = 1,
           max_value = 11,
-          scroll_value = 2,
+          scroll_value = 1,
           variable = s1)
     s1.pack()
 
@@ -79,7 +79,7 @@ def frame1(f1):
           start_value = 1,
           min_value = 0,
           max_value = 16,
-          scroll_value = 2,
+          scroll_value = 1,
           variable = s2)
     s2.pack()
 
