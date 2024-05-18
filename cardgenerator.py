@@ -5,11 +5,13 @@ file_path = r'C:\Users\jorge\Projetos\Chaos-Card-Generator\PS_templates\ps_templ
 
 
 docRef = ps.Open(file_path)
-ps.Visible = False
+group1_name = 'Criatura'
 
-card_name = docRef.ArtLayers['name']
-card_name.TextItem.contents = 'Test Name'
-
+group = docRef.LayerSets[group1_name]
 
 
-ps.Quit()
+card_name = group.ArtLayers['namea']
+card_name.TextItem.Contents = 'Artilharia de Batalha'
+
+
+
