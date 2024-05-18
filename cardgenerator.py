@@ -12,8 +12,11 @@ def change_name():
     group = docRef.LayerSets[group1_name]
 
     new_name = input('Qual o novo nome da carta? ')
-    card_name = group.ArtLayers['namea']
-    card_name.TextItem.Contents = new_name
+    if new_name == '':
+        pass
+    else:
+        card_name = group.ArtLayers['namea']
+        card_name.TextItem.Contents = new_name
 
 def change_effect():
     group1_name = 'Criatura'
