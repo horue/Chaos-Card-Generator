@@ -3,7 +3,7 @@ from CTkMenuBar import *
 from  CustomTkinterMessagebox  import  *
 from customtkinter import filedialog
 from CTkSpinbox import *
-from cardgenerator import *
+from cardgenerator_u import *
 import PIL
 
 elements = ['Fire', 'Water', 'Grass', 'Rock', 'Wind', 'Light', 'Dark']
@@ -20,6 +20,7 @@ def get_command(value):
         filedialog.askopenfilename()
     if value == 'Generate':
         change_name(new_name=str(name.get()))
+        change_type(new_type=str(e2.get()))
         change_effect(new_effect=e3.get('1.0', 'end-1c').replace('\n', '\r'))
         new_image = Image.open(output_temp)
         show_image(new_image)
@@ -61,6 +62,7 @@ def frame1(f1):
     l2a = ct.CTkLabel(f1, text="Card Info")
     l2a.pack()
 
+    global e2
     e2 = ct.CTkEntry(f1, width=200, border_color='Gray')
     e2.pack(padx=10)
 
