@@ -28,8 +28,7 @@ def get_command(value):
         change_name(new_name=str(name.get()))
         change_effect(new_effect=e3.get('1.0', 'end-1c').replace('\n', '\r'))
         CTkMessagebox.messagebox(title='Warning', text='Card exported.')
-        new_image = Image.open(output_temp)
-        show_image(new_image)
+        save_final(name=str(name.get()))
     o1.set("")
 
 def show_image(new_image):
