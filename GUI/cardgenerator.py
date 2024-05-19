@@ -6,16 +6,11 @@ file_path = r'C:\Users\jorge\Projetos\Chaos-Card-Generator\PS_templates\ps_templ
 docRef = ps.Open(file_path)
 
 def save_temp():
-    # Configurar as opções de salvamento para PNG
     png_options = Dispatch("Photoshop.PNGSaveOptions")
     png_options.Interlaced = False
+    output_path = "C:\\Users\\jorge\\Desktop\\temp.png"
     
-    output_path = "C:\\Users\\jorge\\Desktop\\arquivo_temp.png"
-    
-    # Salvar o documento sem interação do usuário
     docRef.Save()
-    
-    # Exportar o documento como PNG no caminho especificado
     docRef.Export(output_path, 6, png_options)
 
 
