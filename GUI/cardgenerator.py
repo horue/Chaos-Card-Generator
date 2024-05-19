@@ -1,18 +1,18 @@
 from win32com.client import Dispatch
 import PIL
+import os
 
 ps = Dispatch(r"Photoshop.Application")
 file_path = r'C:\Users\jorge\Projetos\Chaos-Card-Generator\PS_templates\ps_template.psd'
 docRef = ps.Open(file_path)
+output_temp=os.path.join(os.path.expanduser('~'), r'C:\AppData\Local\Temp')
+
 
 def save_temp():
     png_options = Dispatch("Photoshop.PNGSaveOptions")
     png_options.Interlaced = False
-    output_path = "C:\\Users\\jorge\\Desktop\\temp.png"
-    
-    docRef.Save()
-    docRef.Export(output_path, 6, png_options)
 
+    docRef.SaveAs(output_temp, png_options, True) 
 
 
 def change_name(new_name=''): 
@@ -36,6 +36,7 @@ def change_effect(new_effect=''):
     else:
         card_name = group.ArtLayers['effect']
         card_name.TextItem.Contents = new_effect
+    save_temp()
 
 def change_mana():
     group_name = 'Criatura'
