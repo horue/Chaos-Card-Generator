@@ -3,6 +3,7 @@ from CTkMenuBar import *
 from  CustomTkinterMessagebox  import  *
 from customtkinter import filedialog
 from CTkSpinbox import *
+from cardgenerator import *
 
 elements = ['Fire', 'Water', 'Grass', 'Rock', 'Wind', 'Light', 'Dark']
 
@@ -16,6 +17,8 @@ def get_command(value):
     if value == 'Open':
         filedialog.askopenfilename()
     if value == 'Export':
+        change_name(new_name=str(name.get()))
+        change_effect(new_effect=e3.get('1.0', 'end-1c').replace('\n', '\r'))
         CTkMessagebox.messagebox(title='Warning', text='Card exported.')
 
     o1.set("")
@@ -38,6 +41,7 @@ def frame1(f1):
     l1a = ct.CTkLabel(f1, text="Card Name")
     l1a.pack()
 
+    global name
     name = ct.CTkEntry(f1, width=200, border_color='Gray')
     name.pack(padx=10)
 
@@ -50,6 +54,7 @@ def frame1(f1):
     l3a = ct.CTkLabel(f1, text='Card Effect')
     l3a.pack()
 
+    global e3
     e3 = ct.CTkTextbox(f1, height=200, width=700, border_color='Gray', border_width=2)
     e3.pack(padx=100)
 
