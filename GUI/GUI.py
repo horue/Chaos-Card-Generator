@@ -4,8 +4,10 @@ from  CustomTkinterMessagebox  import  *
 from customtkinter import filedialog
 from CTkSpinbox import *
 from cardgenerator import *
+import PIL
 
 elements = ['Fire', 'Water', 'Grass', 'Rock', 'Wind', 'Light', 'Dark']
+output_temp = r'C:\Users\jorge\Projetos\Chaos-Card-Generator\temp.png'
 
 
 
@@ -16,19 +18,30 @@ def get_command(value):
         CTkMessagebox.messagebox(title='Warning test', text='Save')
     if value == 'Open':
         filedialog.askopenfilename()
+    if value == 'Generate':
+        change_name(new_name=str(name.get()))
+        change_effect(new_effect=e3.get('1.0', 'end-1c').replace('\n', '\r'))
+        new_image = Image.open(output_temp)
+        show_image(new_image)
     if value == 'Export':
         change_name(new_name=str(name.get()))
         change_effect(new_effect=e3.get('1.0', 'end-1c').replace('\n', '\r'))
         CTkMessagebox.messagebox(title='Warning', text='Card exported.')
-
+        new_image = Image.open(output_temp)
+        show_image(new_image)
     o1.set("")
+
+def show_image(new_image):
+    ph = ct.CTkImage(light_image=new_image, dark_image=new_image, size=(744/2, 1039/2))
+    i1.configure(image=ph)
+
 
 def bar1(fm):
     #f0=ct.CTkFrame(fm, width=99, height=20)
     #f0.grid(row=0, padx=0, pady=(0,30), sticky='ew', columnspan=True)
 
     global o1
-    o1 = ct.CTkSegmentedButton(fm, values=["Save", "Open", "Export", ""],corner_radius=50,fg_color='#dbdbdb', selected_color='#dbdbdb',unselected_color='#dbdbdb', text_color='black',selected_hover_color='#c0c0c0',command=get_command)
+    o1 = ct.CTkSegmentedButton(fm, values=["Save", "Open", "Generate",'Export', ""],corner_radius=50,fg_color='#dbdbdb', selected_color='#dbdbdb',unselected_color='#dbdbdb', text_color='black',selected_hover_color='#c0c0c0',command=get_command)
     o1.set("")
     selected_value = o1.get()
     o1.delete(selected_value)
@@ -96,6 +109,14 @@ def frame1(f1):
     e4.pack(padx=100)
 
 
+def frame2(f2):
+    global i1
+    i1 = ct.CTkLabel(f2, text='')
+    i1.pack(pady=15)
+
+
+
+
 
 def initial(root):
     fh=ct.CTkFrame(root)
@@ -110,6 +131,11 @@ def initial(root):
     f1.grid(column=0, row=1, padx=30, pady=(30,0))
 
     frame1(f1)
+
+    f2=ct.CTkScrollableFrame(fm, width=750, height=620, label_text='Card')
+    f2.grid(column=1, row=1, padx=30, pady=(30,0))
+
+    frame2(f2)
 
 
 def main_screen():
