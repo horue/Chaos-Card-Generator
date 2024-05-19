@@ -8,15 +8,23 @@ docRef = ps.Open(file_path)
 output_temp = r'C:\Users\jorge\Projetos\Chaos-Card-Generator\temp.png'
 
 
-def save_temp():
-        if os.path.exists(output_temp):
-            os.remove(output_temp) 
-        # Configurar as opções de salvamento para PNG
-        png_options = Dispatch("Photoshop.PNGSaveOptions")
-        png_options.Interlaced = False
+def save_final(name='final_name'):
+    output_final = fr'C:\Users\jorge\Projetos\Chaos-Card-Generator\{name}.png'
+    if os.path.exists(output_final):
+        os.remove(output_final)
+    png_options = Dispatch("Photoshop.PNGSaveOptions")
+    png_options.Interlaced = False
 
-        # Salvar o documento como PNG no caminho especificado
-        docRef.SaveAs(output_temp, png_options, True) 
+    docRef.SaveAs(output_final, png_options, True) 
+
+
+def save_temp():
+    if os.path.exists(output_temp):
+        os.remove(output_temp) 
+    png_options = Dispatch("Photoshop.PNGSaveOptions")
+    png_options.Interlaced = False
+
+    docRef.SaveAs(output_temp, png_options, True) 
 
 
 def change_name(new_name=''): 
