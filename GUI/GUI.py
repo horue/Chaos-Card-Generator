@@ -4,6 +4,7 @@ from  CustomTkinterMessagebox  import  *
 from customtkinter import filedialog
 from CTkSpinbox import *
 from cardgenerator_u import *
+from romanconverter import *
 import PIL
 
 elements = ['Fire', 'Water', 'Grass', 'Rock', 'Wind', 'Light', 'Dark']
@@ -13,6 +14,7 @@ output_temp = r'C:\Users\jorge\Projetos\Chaos-Card-Generator\temp.png'
 def create_temp():
     change_name(new_name=str(name.get()))
     change_type(new_type=str(e2.get()))
+    change_mana(new_mana=write_roman(s1.get()))
     change_power(new_power=str(s2.get()))
     change_effect(new_effect=e3.get('1.0', 'end-1c').replace('\n', '\r'))
     new_image = Image.open(output_temp)
@@ -86,6 +88,8 @@ def frame1(f1):
     l4a = ct.CTkLabel(f1, text='Mana Cost')
     l4a.pack()
 
+
+    global s1
     s1 = ct.IntVar()
     s1 = CTkSpinbox(f1,
           start_value = 1,
