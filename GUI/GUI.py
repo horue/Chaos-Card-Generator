@@ -10,7 +10,13 @@ elements = ['Fire', 'Water', 'Grass', 'Rock', 'Wind', 'Light', 'Dark']
 output_temp = r'C:\Users\jorge\Projetos\Chaos-Card-Generator\temp.png'
 
 
-
+def create_temp():
+    change_name(new_name=str(name.get()))
+    change_type(new_type=str(e2.get()))
+    change_power(new_power=str(s2.get()))
+    change_effect(new_effect=e3.get('1.0', 'end-1c').replace('\n', '\r'))
+    new_image = Image.open(output_temp)
+    show_image(new_image)
 
 def get_command(value):
     print("segmented button clicked:", value)
@@ -19,12 +25,7 @@ def get_command(value):
     if value == 'Open':
         filedialog.askopenfilename()
     if value == 'Generate':
-        change_name(new_name=str(name.get()))
-        change_type(new_type=str(e2.get()))
-        change_power(new_power=str(s2.get()))
-        change_effect(new_effect=e3.get('1.0', 'end-1c').replace('\n', '\r'))
-        new_image = Image.open(output_temp)
-        show_image(new_image)
+        create_temp()
     if value == 'Export':
         change_name(new_name=str(name.get()))
         change_effect(new_effect=e3.get('1.0', 'end-1c').replace('\n', '\r'))
