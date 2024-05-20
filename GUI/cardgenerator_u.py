@@ -78,5 +78,13 @@ def change_power(new_power=''):
         card_config = group.ArtLayers['atk']
         card_config.TextItem.Contents = new_power
 
+def change_frame(new_frame='Normal'):
+    group_name = 'Criatura'
+    group = docRef.LayerSets[group_name]
+    card_config = group.ArtLayers['frame']
+    if new_frame == 'Normal':
+        card_config.BlendMode = 2
+    if new_frame == 'Extended':
+        card_config.BlendMode = 7
 
 
