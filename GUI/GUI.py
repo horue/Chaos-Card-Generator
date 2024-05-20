@@ -18,6 +18,12 @@ def create_temp():
     new_image = Image.open(output_temp)
     show_image(new_image)
 
+def create_final():
+    change_name(new_name=str(name.get()))
+    change_effect(new_effect=e3.get('1.0', 'end-1c').replace('\n', '\r'))
+    CTkMessagebox.messagebox(title='Warning', text='Card exported.')
+    save_final(name=str(name.get()))
+
 def get_command(value):
     print("segmented button clicked:", value)
     if value == 'Save':
@@ -27,10 +33,7 @@ def get_command(value):
     if value == 'Generate':
         create_temp()
     if value == 'Export':
-        change_name(new_name=str(name.get()))
-        change_effect(new_effect=e3.get('1.0', 'end-1c').replace('\n', '\r'))
-        CTkMessagebox.messagebox(title='Warning', text='Card exported.')
-        save_final(name=str(name.get()))
+        create_final()
     o1.set("")
 
 def show_image(new_image):
