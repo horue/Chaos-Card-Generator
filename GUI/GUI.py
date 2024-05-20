@@ -21,6 +21,7 @@ def get_command(value):
     if value == 'Generate':
         change_name(new_name=str(name.get()))
         change_type(new_type=str(e2.get()))
+        change_power(new_power=str(s2.get()))
         change_effect(new_effect=e3.get('1.0', 'end-1c').replace('\n', '\r'))
         new_image = Image.open(output_temp)
         show_image(new_image)
@@ -93,6 +94,8 @@ def frame1(f1):
     l5a = ct.CTkLabel(f1, text='Card Power')
     l5a.pack()
 
+
+    global s2
     s2 = ct.IntVar()
     s2 = CTkSpinbox(f1,
           start_value = 1,
