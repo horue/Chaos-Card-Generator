@@ -71,11 +71,9 @@ def change_mana():
         card_config = group.ArtLayers['mana']
         card_config.TextItem.Contents = new_mana
 
-def change_power():
+def change_power(new_power=''):
     group_name = 'Criatura'
     group = docRef.LayerSets[group_name]
-
-    new_power = input('Qual a nova força? ')
     if new_power == '':
         pass
     else:
