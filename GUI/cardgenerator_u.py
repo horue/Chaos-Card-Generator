@@ -78,6 +78,23 @@ def change_power(new_power=''):
         card_config = group.ArtLayers['atk']
         card_config.TextItem.Contents = new_power
 
+def change_info(new_info=''):
+    group_name = 'Criatura'
+    group = docRef.LayerSets[group_name]
+    if new_info == '':
+        pass
+    else:
+        card_config = group.ArtLayers['info']
+        card_config.TextItem.Contents = new_info
+
+def change_element(new_element=''):
+    group_name = 'Criatura'
+    group = docRef.LayerSets[group_name]
+    if new_element == '':
+        pass
+    else:
+        card_config = group.A
+
 def change_frame(new_frame='Normal'):
     group_name = 'Criatura'
     group = docRef.LayerSets[group_name]
