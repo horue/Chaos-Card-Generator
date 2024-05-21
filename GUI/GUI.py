@@ -5,9 +5,10 @@ from customtkinter import filedialog
 from CTkSpinbox import *
 from cardgenerator_u import *
 from romanconverter import *
+from cardsaver import *
 import PIL
 
-elements = ['Fire', 'Water', 'Grass', 'Rock', 'Wind', 'Light', 'Dark', 'Neutral']
+elements = ['Fire', 'Water', 'Grass', 'Rock', 'Light', 'Dark', 'Neutral']
 output_temp = r'C:\Users\jorge\Projetos\Chaos-Card-Generator\temp.png'
 
 
@@ -17,6 +18,7 @@ def create_temp():
     change_mana(new_mana=write_roman(s1.get()))
     change_power(new_power=str(s2.get()))
     change_frame(new_frame=str(o3.get()))
+    change_info(new_info=e4.get('1.0', 'end-1c').replace('\n', '\r'))
     change_effect(new_effect=e3.get('1.0', 'end-1c').replace('\n', '\r'))
     new_image = Image.open(output_temp)
     show_image(new_image)
@@ -30,6 +32,7 @@ def create_final():
 def get_command(value):
     print("segmented button clicked:", value)
     if value == 'Save':
+        save_json(file=name.get(), nome=name.get(), eff=e3.get('1.0', 'end-1c'))
         CTkMessagebox.messagebox(title='Warning test', text='Save')
     if value == 'Open':
         filedialog.askopenfilename()
@@ -118,6 +121,8 @@ def frame1(f1):
     l6a = ct.CTkLabel(f1, text='Card ID/Date')
     l6a.pack()
 
+
+    global e4
     e4 = ct.CTkTextbox(f1, height=50, width=700, border_color='Gray', border_width=2)
     e4.pack(padx=100)
 
