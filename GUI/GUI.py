@@ -7,7 +7,7 @@ from cardgenerator_u import *
 from romanconverter import *
 import PIL
 
-elements = ['Fire', 'Water', 'Grass', 'Rock', 'Wind', 'Light', 'Dark']
+elements = ['Fire', 'Water', 'Grass', 'Rock', 'Wind', 'Light', 'Dark', 'Neutral']
 output_temp = r'C:\Users\jorge\Projetos\Chaos-Card-Generator\temp.png'
 
 
@@ -16,6 +16,7 @@ def create_temp():
     change_type(new_type=str(e2.get()))
     change_mana(new_mana=write_roman(s1.get()))
     change_power(new_power=str(s2.get()))
+    change_frame(new_frame=str(o3.get()))
     change_effect(new_effect=e3.get('1.0', 'end-1c').replace('\n', '\r'))
     new_image = Image.open(output_temp)
     show_image(new_image)
@@ -119,6 +120,13 @@ def frame1(f1):
 
     e4 = ct.CTkTextbox(f1, height=50, width=700, border_color='Gray', border_width=2)
     e4.pack(padx=100)
+
+    l7a = ct.CTkLabel(f1, text='Card Frame')
+    l7a.pack()
+
+    global o3
+    o3 = ct.CTkOptionMenu(f1, values=['Normal', 'Extended'])
+    o3.pack()
 
 
 def frame2(f2):
