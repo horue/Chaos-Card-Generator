@@ -86,6 +86,7 @@ def frame1(f1):
     l4 = ct.CTkLabel(f1, text='Card Element')
     l4.pack()
 
+    global o2
     o2 = ct.CTkOptionMenu(f1, values=elements)
     o2.pack()
 
