@@ -87,13 +87,16 @@ def change_info(new_info=''):
         card_config = group.ArtLayers['info']
         card_config.TextItem.Contents = new_info
 
-def change_element(new_element=''):
+"""def change_element(new_element='Light'):
     group_name = 'Criatura'
     group = docRef.LayerSets[group_name]
+    card_config = group.ArtLayers['gradiente1']
+    gradients = ps
     if new_element == '':
         pass
     else:
-        card_config = group.A
+        card_config.FillPath = new_element"""
+
 
 def change_frame(new_frame='Normal'):
     group_name = 'Criatura'
@@ -104,4 +107,15 @@ def change_frame(new_frame='Normal'):
     if new_frame == 'Extended':
         card_config.BlendMode = 7
 
+group_name = 'Criatura'
+group = docRef.LayerSets[group_name]
+card_config = group.ArtLayers['gradiente1']
+try:
 
+        # List all attributes and methods of the layer
+        attributes = dir(card_config)
+        print("Attributes and methods of the layer:")
+        for attr in attributes:
+            print(attr)
+except Exception as e:
+        print(f"Failed to list layer attributes: {e}")
