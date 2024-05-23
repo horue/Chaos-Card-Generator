@@ -18,6 +18,7 @@ def create_temp():
     change_mana(new_mana=write_roman(s1.get()))
     change_power(new_power=str(s2.get()))
     change_frame(new_frame=str(o3.get()))
+    change_class(new_class=str(o7.get()))
     change_info(new_info=e4.get('1.0', 'end-1c').replace('\n', '\r'))
     change_effect(new_effect=e3.get('1.0', 'end-1c').replace('\n', '\r'))
     new_image = Image.open(output_temp)
@@ -59,9 +60,9 @@ def bar1(fm):
     o1.grid(row=2, column=0, pady=10, padx=10)
 
 def frame1(f1):
-    global o1
-    o1 = ct.CTkOptionMenu(f1, values=['Creature', 'Witchcraft'])
-    o1.pack()
+    global o7
+    o7 = ct.CTkOptionMenu(f1, values=['Creature', 'Witchcraft'])
+    o7.pack()
 
     l1a = ct.CTkLabel(f1, text="Card Name")
     l1a.pack()
