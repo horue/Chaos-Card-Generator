@@ -18,7 +18,6 @@ def create_temp():
     change_mana(new_mana=write_roman(s1.get()))
     change_power(new_power=str(s2.get()))
     change_frame(new_frame=str(o3.get()))
-    change_class(new_class=str(o1.get()))
     change_info(new_info=e4.get('1.0', 'end-1c').replace('\n', '\r'))
     change_effect(new_effect=e3.get('1.0', 'end-1c').replace('\n', '\r'))
     new_image = Image.open(output_temp)
@@ -53,7 +52,7 @@ def bar1(fm):
     #f0.grid(row=0, padx=0, pady=(0,30), sticky='ew', columnspan=True)
 
     global o1
-    o1 = ct.CTkSegmentedButton(fm, values=["Save", "Open", "Generate",'Export', ""],corner_radius=50,fg_color='#dbdbdb', selected_color='#dbdbdb',unselected_color='#dbdbdb', text_color='black',selected_hover_color='#c0c0c0',command=get_command)
+    o1 = ct.CTkSegmentedButton(fm, values=["", "Save", "Open", "Generate",'Export'],corner_radius=50,fg_color='#dbdbdb', selected_color='#dbdbdb',unselected_color='#dbdbdb', text_color='black',selected_hover_color='#c0c0c0',command=get_command)
     o1.set("")
     selected_value = o1.get()
     o1.delete(selected_value)
