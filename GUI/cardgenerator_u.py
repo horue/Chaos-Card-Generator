@@ -78,6 +78,21 @@ def change_power(new_power=''):
         card_config = group.ArtLayers['atk']
         card_config.TextItem.Contents = new_power
 
+def change_class(new_class='Creature'):
+    group_name = 'Criatura'
+    group = docRef.LayerSets[group_name]
+    if new_class == 'Witchcraft':
+        card_config = group.ArtLayers['atk']
+        card_config.Visible = False
+        wc_symbol = group.ArtLayers['w']
+        wc_symbol.Visible = True
+    if new_class == 'Creature':
+        card_config = group.ArtLayers['atk']
+        card_config.Visible = True
+        wc_symbol = group.ArtLayers['w']
+        wc_symbol.Visible = False
+
+
 def change_info(new_info=''):
     group_name = 'Criatura'
     group = docRef.LayerSets[group_name]
@@ -109,7 +124,7 @@ def change_frame(new_frame='Normal'):
 
 group_name = 'Criatura'
 group = docRef.LayerSets[group_name]
-card_config = group.ArtLayers['gradiente1']
+card_config = group.ArtLayers['atk']
 try:
 
         # List all attributes and methods of the layer
