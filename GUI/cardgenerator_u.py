@@ -78,9 +78,11 @@ def change_power(new_power=''):
         card_config = group.ArtLayers['atk']
         card_config.TextItem.Contents = new_power
 
-def change_class(new_class='Creature'):
+def change_class(new_class=''):
     group_name = 'Criatura'
     group = docRef.LayerSets[group_name]
+    if new_class == '':
+        pass
     if new_class == 'Witchcraft':
         card_config = group.ArtLayers['atk']
         card_config.Visible = False
@@ -121,16 +123,3 @@ def change_frame(new_frame='Normal'):
         card_config.BlendMode = 2
     if new_frame == 'Extended':
         card_config.BlendMode = 7
-
-group_name = 'Criatura'
-group = docRef.LayerSets[group_name]
-card_config = group.ArtLayers['atk']
-try:
-
-        # List all attributes and methods of the layer
-        attributes = dir(card_config)
-        print("Attributes and methods of the layer:")
-        for attr in attributes:
-            print(attr)
-except Exception as e:
-        print(f"Failed to list layer attributes: {e}")
