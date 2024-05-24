@@ -9,7 +9,7 @@ output_temp = r'C:\Users\jorge\Projetos\Chaos-Card-Generator\temp.png'
 
 
 def save_final(name='final_name'):
-    output_final = fr'C:\Users\jorge\Projetos\Chaos-Card-Generator\{name}.png'
+    output_final = fr'C:\Users\jorge\Desktop\Chaos\{name}.png'
     if os.path.exists(output_final):
         os.remove(output_final)
     png_options = Dispatch("Photoshop.PNGSaveOptions")
