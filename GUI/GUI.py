@@ -8,7 +8,9 @@ from romanconverter import *
 from cardsaver import *
 import PIL
 
-elements = ['Fire', 'Water', 'Grass', 'Rock', 'Light', 'Dark', 'Neutral']
+config = open('GUI\elements.ini', 'r')
+config_read = config.read()
+elements = config_read.split(',')
 output_temp = r'C:\Users\jorge\Projetos\Chaos-Card-Generator\temp.png'
 
 

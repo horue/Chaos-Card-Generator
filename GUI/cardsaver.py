@@ -13,5 +13,5 @@ def save_json(file='', card='', nome='', info='', element='', eff='', mana='', p
         'Card ID/Date': f'{idate}',
         'Card Frame': f'{frame}'
     }
-    with open(f"{final_file}.json", "w") as outfile:
+    with open(rf"Saved Cards/{final_file}.json", "w") as outfile:
         json.dump(dictionary, outfile)
